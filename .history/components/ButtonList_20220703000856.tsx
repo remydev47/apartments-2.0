@@ -1,0 +1,48 @@
+import { Pressable, StyleSheet, View, ViewStyle } from "react-native";
+import { Text } from '@ui-kitten/components';
+
+import { theme } from "../theme";
+
+export const ButtonList = ({
+    data, 
+    header,
+    style, 
+    borderTop, 
+    marginTop
+} : {
+    data :{label: string; onPress:() => void}[]
+    header?:string;
+    style?:ViewStyle | ViewStyle;
+    borderTop?: boolean;
+    marginTop?: boolean;
+}) => {
+     
+    const getListHeaderComponent = () => {
+        if(!header)return null
+
+        return(
+            <View style={[styles.headerContainer, { marginTop: marginTop ? 35 : 0 }]}>
+                <Text style={styles.headerText}>{header}</Text>
+            </View>
+        )
+    }
+
+    return(
+        <View style={[styles.container, style, { borderTopWidth: borderTop ? 1 : 0 }]}>
+
+        </View>
+    )
+}
+
+const styles = StyleSheet.create({
+    container: {
+        borderColor: theme["color-gray"],
+        borderBottomWidth: 1
+    },
+    headerContainer:{
+        paddingVertical: 12,
+        backgroundColor: "#f1f7e5",
+        borderBottomWidth: 1,
+        borderBottomColor: theme["color-gray"]
+    }
+})

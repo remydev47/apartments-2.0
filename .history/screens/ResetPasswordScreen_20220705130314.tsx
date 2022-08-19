@@ -1,0 +1,13 @@
+import { Text } from "@ui-kitten/components";
+import { Screen } from "../components/Screen";
+
+export const ResetPasswordScreen = ({route}
+    : 
+  { params : { token: string}
+}) => {
+    return(
+        <Screen>
+            <Text>ResetPassword</Text>
+        </Screen>
+    )
+}
